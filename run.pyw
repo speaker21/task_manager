@@ -14,8 +14,8 @@ class MainWindow(tk.Tk):
         self.pined = False
         self.pin()
 
-        # Оставляет только кнопку закрытия приложения
-        self.attributes('-toolwindow', True)
+        # Оставляет только кнопку закрытия приложения, при этом пропадает кнопка на панели задач
+        #self.attributes('-toolwindow', True)
 
         self.frame_completed_tasks = FrameWithCompletedTasks(master=self)
         self.frame_active_tasks = FrameWithActiveTasks(master=self)
