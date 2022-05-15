@@ -180,6 +180,8 @@ class FrameWithActiveTasks(Frame):
         self.add_button = Button(master=self, text='Добавить', command=lambda: self.tasks_listbox.add_to_db_and_listbox(
             self.input.get_and_delete_text()))
         self.add_button.grid(column=2, row=2)
+        self.master.bind('<Return>', lambda event: self.tasks_listbox.add_to_db_and_listbox(
+            self.input.get_and_delete_text())) # Также дублируем для нажатия Enter
 
         self.remove_button = Button(
             master=self, text='Удалить', command=self.tasks_listbox.delete_from_db_and_listbox)
